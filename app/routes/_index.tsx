@@ -6,6 +6,7 @@ import { PostService } from "~/services/PostService";
 import { MetaFunction, useLoaderData } from "@remix-run/react";
 import { IPost } from "~/interface/post.interface";
 import { json } from "@remix-run/node";
+import * as process from "process";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,10 +19,11 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = async () => {
+  const apiUrl = process.env.API_URL!;
   const [posts, tags, categories] = await Promise.all([
-    await PostService.get(),
-    await PostService.getTags(),
-    await PostService.getCategories(),
+    await PostService.get(apiUrl),
+    await PostService.getTags(apiUrl),
+    await PostService.getCategories(apiUrl),
   ]);
   return json({ posts, tags, categories });
 };

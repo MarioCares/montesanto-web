@@ -6,7 +6,7 @@ import { publisherNameToAvatarImage } from "~/utils/string";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
 
 export const loader = async ({ context, params }: LoaderFunctionArgs) => {
-  const api_url = "context.cloudflare.env.API_URL";
+  const api_url = process.env.API_URL!;
   const [post] = await Promise.all([
     await PostService.getBySlug(params.slug, api_url),
   ]);

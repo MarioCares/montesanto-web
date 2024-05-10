@@ -6,9 +6,10 @@ import { IPost } from "~/interface/post.interface";
 import RecentPostCard from "~/components/ui/article/Card";
 import PostNotFound from "~/components/ui/PostNotFound";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
+import * as process from "process";
 
 export const loader = async ({ context, params }: LoaderFunctionArgs) => {
-  const api_url = "context.cloudflare.env.API_URL";
+  const api_url = process.env.API_URL!;
   const [posts, tags, categories] = await Promise.all([
     await PostService.getByTags(params.tag, api_url),
     await PostService.getTags(api_url),
@@ -18,11 +19,9 @@ export const loader = async ({ context, params }: LoaderFunctionArgs) => {
 };
 
 export default function PostByTagPage() {
-  const { posts, tag, categories, tags } = useLoaderData<typeof loader>() as {
+  const { posts, tag } = useLoaderData<typeof loader>() as {
     posts: IPost[];
     tag: string;
-    tags: string[];
-    categories: { [key: string]: number };
   };
 
   return (
@@ -43,7 +42,7 @@ export default function PostByTagPage() {
                 <PostNotFound />
               )}
             </div>
-            <Sidebar categories={categories} tags={tags} />
+            <Sidebar />
           </div>
         </div>
       </section>

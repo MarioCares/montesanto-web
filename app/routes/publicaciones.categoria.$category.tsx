@@ -7,7 +7,7 @@ import PostNotFound from "~/components/ui/PostNotFound";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
 
 export const loader = async ({ context, params }: LoaderFunctionArgs) => {
-  const api_url = "context.cloudflare.env.API_URL";
+  const api_url = process.env.API_URL!;
   const [posts, tags, categories] = await Promise.all([
     await PostService.getByCategories(params.category, api_url),
     await PostService.getTags(api_url),
@@ -17,13 +17,9 @@ export const loader = async ({ context, params }: LoaderFunctionArgs) => {
 };
 
 export default function PostByCategoryPage() {
-  const { posts, category, categories, tags } = useLoaderData<
-    typeof loader
-  >() as {
+  const { posts, category } = useLoaderData<typeof loader>() as {
     posts: IPost[];
     category: string;
-    tags: string[];
-    categories: { [key: string]: number };
   };
 
   return (
@@ -44,7 +40,7 @@ export default function PostByCategoryPage() {
                 <PostNotFound />
               )}
             </div>
-            <Sidebar categories={categories} tags={tags} />
+            <Sidebar />
           </div>
         </div>
       </section>
