@@ -1,35 +1,36 @@
 import * as process from "process";
 
-const get = async (apiUrl: string) => {
-  const response = await fetch(`${apiUrl}/publicacion`);
+const API_URL = process.env.API_URL ?? "localhost";
+
+const get = async () => {
+  const response = await fetch(`http://${API_URL}:4000/publicacion`);
   return await response.json();
 };
 
-const getBySlug = async (slug: string | undefined, apiUrl: string) => {
-  const response = await fetch(`${apiUrl}/publicacion/${slug}`);
+const getBySlug = async (slug: string | undefined) => {
+  const response = await fetch(`http://${API_URL}:4000/publicacion/${slug}`);
   return await response.json();
 };
 
-const getTags = async (apiUrl: string) => {
-  const response = await fetch(`${apiUrl}/publicacion/tags`);
+const getTags = async () => {
+  const response = await fetch(`http://${API_URL}:4000/publicacion/tags`);
   return await response.json();
 };
 
-const getCategories = async (apiUrl: string) => {
-  const response = await fetch(`${apiUrl}/publicacion/categorias`);
+const getCategories = async () => {
+  const response = await fetch(`http://${API_URL}:4000/publicacion/categorias`);
   return await response.json();
 };
 
-const getByCategories = async (
-  category: string | undefined,
-  apiUrl: string
-) => {
-  const response = await fetch(`${apiUrl}/publicacion/categoria/${category}`);
+const getByCategories = async (category: string | undefined) => {
+  const response = await fetch(
+    `http://${API_URL}:4000/publicacion/categoria/${category}`
+  );
   return await response.json();
 };
 
-const getByTags = async (tag: string | undefined, apiUrl: string) => {
-  const response = await fetch(`${apiUrl}/publicacion/tag/${tag}`);
+const getByTags = async (tag: string | undefined) => {
+  const response = await fetch(`http://${API_URL}:4000/publicacion/tag/${tag}`);
   return await response.json();
 };
 

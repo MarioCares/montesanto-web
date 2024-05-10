@@ -6,14 +6,12 @@ import { IPost } from "~/interface/post.interface";
 import RecentPostCard from "~/components/ui/article/Card";
 import PostNotFound from "~/components/ui/PostNotFound";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
-import * as process from "process";
 
-export const loader = async ({ context, params }: LoaderFunctionArgs) => {
-  const api_url = process.env.API_URL!;
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const [posts, tags, categories] = await Promise.all([
-    await PostService.getByTags(params.tag, api_url),
-    await PostService.getTags(api_url),
-    await PostService.getCategories(api_url),
+    await PostService.getByTags(params.tag),
+    await PostService.getTags(),
+    await PostService.getCategories(),
   ]);
   return json({ posts, tag: params.tag, tags, categories });
 };
