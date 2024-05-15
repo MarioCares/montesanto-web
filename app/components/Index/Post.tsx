@@ -1,5 +1,5 @@
 import { IPost } from "~/interface/post.interface";
-import RecentPostCard from "~/components/ui/article/Card";
+import { RecentPostCard } from "~/components/ui/article/Card";
 
 type PostProps = {
   posts: IPost[];
@@ -11,7 +11,7 @@ export default function Post({ posts }: PostProps) {
       <h2 className="h5 section-title">Recent Post</h2>
 
       {posts.map((post: IPost) => (
-        <RecentPostCard key={post.slug} post={post} />
+        <RecentPostCard key={post.slug} post={post} isFeatured={false} />
       ))}
 
       <ul className="pagination justify-content-center">

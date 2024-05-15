@@ -1,13 +1,23 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, MetaFunction, useLoaderData } from "@remix-run/react";
 import { PostService } from "~/services/PostService";
 import { IPost, IPostTag } from "~/interface/post.interface";
 import TextAndImage from "~/components/ui/sections/TextAndImage";
-import { publisherNameToAvatarImage } from "~/utils/string";
+import { longDateToShorDate, publisherNameToAvatarImage } from "~/utils/string";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const [post] = await Promise.all([await PostService.getBySlug(params.slug)]);
   return json({ post });
+};
+
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  return [
+    { title: `${data?.post.title} - MonteSanto.cl` },
+    {
+      name: "description",
+      content: "Bienvenido a nuestra web",
+    },
+  ];
 };
 
 export default function PostPage() {
@@ -37,11 +47,12 @@ export default function PostPage() {
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <i className="ti-timer"></i>2 Min To Read
+                    <i className="ti-timer"></i>
+                    {post.lectureTime}&apos; lectura
                   </li>
                   <li className="list-inline-item">
                     <i className="ti-calendar"></i>
-                    {post.postAt}
+                    {longDateToShorDate(post.postAt)}
                   </li>
                   <li className="list-inline-item">
                     <ul className="card-meta-tag list-inline">
@@ -65,9 +76,15 @@ export default function PostPage() {
                     />
                   }
                 >
-                  {post.introduction}
+                  <div
+                    className="content"
+                    dangerouslySetInnerHTML={{ __html: post.introduction }}
+                  />
                 </TextAndImage>
-                <div dangerouslySetInnerHTML={{ __html: post.body }} />
+                <div
+                  className="content"
+                  dangerouslySetInnerHTML={{ __html: post.body }}
+                />
                 <div className="widget mt-6">
                   <nav className="level">
                     <div className="level-item has-text-centered">

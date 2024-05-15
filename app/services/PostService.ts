@@ -2,8 +2,10 @@ import * as process from "process";
 
 const API_URL = process.env.API_URL ?? "localhost";
 
-const get = async () => {
-  const response = await fetch(`http://${API_URL}:4000/publicacion`);
+const get = async (limit: number, offset: number) => {
+  const response = await fetch(
+    `http://${API_URL}:4000/publicacion?limit=${limit}&offset=${offset}`
+  );
   return await response.json();
 };
 
@@ -34,6 +36,13 @@ const getByTags = async (tag: string | undefined) => {
   return await response.json();
 };
 
+const getLastDominical = async () => {
+  const response = await fetch(
+    `http://${API_URL}:4000/publicacion/ultima-palabra`
+  );
+  return await response.json();
+};
+
 export const PostService = {
   get,
   getBySlug,
@@ -41,4 +50,5 @@ export const PostService = {
   getByTags,
   getCategories,
   getByCategories,
+  getLastDominical,
 };

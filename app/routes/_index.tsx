@@ -18,12 +18,15 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = async () => {
-  const [posts, tags, categories] = await Promise.all([
-    await PostService.get(),
-    await PostService.getTags(),
-    await PostService.getCategories(),
-  ]);
-  return json({ posts, tags, categories });
+  const [posts, tags, categories, lastDominical, featuredPosts] =
+    await Promise.all([
+      await PostService.get(10, 0),
+      await PostService.getTags(),
+      await PostService.getCategories(),
+      await PostService.getLastDominical(),
+      await PostService.get(3, 0),
+    ]);
+  return json({ posts, tags, categories, lastDominical, featuredPosts });
 };
 
 // tema => https://github.com/themefisher/reader-bulma/tree/main
@@ -31,8 +34,6 @@ export const loader = async () => {
 export default function Index() {
   const { posts } = useLoaderData<typeof loader>() as {
     posts: IPost[];
-    tags: string[];
-    categories: { [key: string]: number };
   };
 
   return (

@@ -13,7 +13,9 @@ export interface IPost {
   originallyPublish: string;
   body: string;
   title: string;
+  subtitle: string;
   publisher: string;
   category: string;
+  lectureTime: number;
   PostTags: IPostTag[];
 }

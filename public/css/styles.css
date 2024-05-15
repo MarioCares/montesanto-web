@@ -72,23 +72,23 @@ h6, .h6 {
 }
 
 .btn-primary {
-    background: #4FD675;
+    background: #66d1ff;
     color: #fff !important;
-    border-color: #4FD675;
+    border-color: #66d1ff;
 }
 .btn-primary:active, .btn-primary:hover, .btn-primary.focus, .btn-primary.active {
-    background: #4FD675 !important;
-    border-color: #4FD675 !important;
+    background: #66d1ff !important;
+    border-color: #66d1ff !important;
 }
 
 .btn-outline-primary {
     background: transparent;
-    color: #4FD675;
-    border-color: #4FD675;
+    color: #66d1ff;
+    border-color: #66d1ff;
 }
 .btn-outline-primary:active, .btn-outline-primary:hover, .btn-outline-primary.focus, .btn-outline-primary.active {
-    background: #4FD675 !important;
-    border-color: #4FD675 !important;
+    background: #66d1ff !important;
+    border-color: #66d1ff !important;
     color: #fff;
 }
 
@@ -150,7 +150,7 @@ select:focus {
 }
 
 a:hover {
-    color: #4FD675;
+    color: #66d1ff;
 }
 
 .slick-slide {
@@ -169,8 +169,8 @@ hr {
 mark {
     padding: 0;
     background-color: transparent;
-    border-bottom: 3px solid #4FD675;
-    color: #4FD675;
+    border-bottom: 3px solid #66d1ff;
+    color: #66d1ff;
 }
 
 .section {
@@ -178,8 +178,8 @@ mark {
     padding-bottom: 100px;
 }
 .section-sm {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .section-title {
     position: relative;
@@ -194,7 +194,7 @@ mark {
     content: "";
     height: 2px;
     width: 60px;
-    background-color: #4FD675;
+    background-color: #66d1ff;
 }
 
 .bg-cover {
@@ -224,7 +224,7 @@ mark {
     content: "";
     height: 10px;
     width: 10px;
-    border: 1px solid #4FD675;
+    border: 1px solid #66d1ff;
     left: 0;
     top: 7px;
     border-radius: 50px;
@@ -245,7 +245,7 @@ mark {
     font-weight: 700;
 }
 .badge-primary {
-    background-color: #4FD675;
+    background-color: #66d1ff;
 }
 
 /* overlay */
@@ -264,11 +264,11 @@ mark {
 }
 
 .bg-primary {
-    background: #4FD675 !important;
+    background: #66d1ff !important;
 }
 
 .text-primary {
-    color: #4FD675 !important;
+    color: #66d1ff !important;
 }
 
 .text-default {
@@ -285,7 +285,7 @@ mark {
 }
 
 .st0 {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 
 .sidebar-home {
@@ -498,11 +498,11 @@ mark {
     color: #333;
 }
 .navbar-link:focus, .navbar-link:hover {
-    color: #4FD675 !important;
+    color: #66d1ff !important;
     background-color: transparent;
 }
 .navbar-link:focus::after, .navbar-link:hover::after {
-    border-color: #4FD675 !important;
+    border-color: #66d1ff !important;
 }
 
 .navbar-link:not(.is-arrowless)::after {
@@ -588,7 +588,7 @@ mark {
     border-radius: inherit;
 }
 .navbar-item.has-dropdown .navbar-item:hover {
-    color: #4FD675 !important;
+    color: #66d1ff !important;
     background-color: #F9F9F9 !important;
 }
 
@@ -614,7 +614,7 @@ mark {
     z-index: 1;
 }
 .search-bar input:focus {
-    border-color: #4FD675;
+    border-color: #66d1ff;
     outline: 0;
 }
 .search-bar input::-moz-placeholder {
@@ -659,7 +659,7 @@ mark {
     top: 25%;
 }
 .banner-shape-1 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .banner-shape-2 {
     position: absolute;
@@ -667,7 +667,7 @@ mark {
     top: 25%;
 }
 .banner-shape-2 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .banner-shape-3 {
     position: absolute;
@@ -675,14 +675,14 @@ mark {
     bottom: 15%;
 }
 .banner-shape-3 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .banner-border {
     position: absolute;
     bottom: -10px;
     left: 0;
     width: 100%;
-    stroke: #4FD675;
+    stroke: #66d1ff;
 }
 
 .header {
@@ -703,7 +703,7 @@ mark {
     top: 25%;
 }
 .header-shape-1 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .header-shape-2 {
     position: absolute;
@@ -711,7 +711,7 @@ mark {
     top: 25%;
 }
 .header-shape-2 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .header-shape-3 {
     position: absolute;
@@ -719,13 +719,13 @@ mark {
     bottom: 15%;
 }
 .header-shape-3 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .header-border {
     position: absolute;
     left: 0;
     width: 100%;
-    stroke: #4FD675;
+    stroke: #66d1ff;
 }
 
 .author {
@@ -739,7 +739,7 @@ mark {
     top: 25%;
 }
 .author-shape-1 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .author-shape-2 {
     position: absolute;
@@ -747,7 +747,7 @@ mark {
     top: 25%;
 }
 .author-shape-2 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .author-shape-3 {
     position: absolute;
@@ -755,14 +755,14 @@ mark {
     bottom: 15%;
 }
 .author-shape-3 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .author-border {
     position: absolute;
     bottom: -15px;
     left: 0;
     width: 100%;
-    stroke: #4FD675;
+    stroke: #66d1ff;
     z-index: -1;
 }
 
@@ -792,7 +792,7 @@ mark {
     z-index: -1;
 }
 .wave-shape-1 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .wave-shape-2 {
     position: absolute;
@@ -801,7 +801,7 @@ mark {
     z-index: -1;
 }
 .wave-shape-2 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .wave-shape-3 {
     position: absolute;
@@ -810,7 +810,7 @@ mark {
     z-index: -1;
 }
 .wave-shape-3 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .wave-shape-4 {
     position: absolute;
@@ -819,7 +819,7 @@ mark {
     z-index: -1;
 }
 .wave-shape-4 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 
 .author-card {
@@ -850,7 +850,7 @@ mark {
     display: block;
     margin: 0 auto 10px;
     border: 5px solid transparent;
-    box-shadow: 0 0 0 2px #4FD675;
+    box-shadow: 0 0 0 2px #66d1ff;
 }
 @media (max-width: 1200px) {
     .author-image {
@@ -911,7 +911,7 @@ mark {
     border-radius: 50%;
 }
 .card-meta-author:hover {
-    color: #4FD675;
+    color: #66d1ff;
 }
 .card-meta-tag {
     margin-bottom: 0;
@@ -929,8 +929,8 @@ mark {
     display: inline-block;
 }
 .card-meta-tag li a:hover {
-    background-color: #4FD675;
-    border-color: #4FD675;
+    background-color: #66d1ff;
+    border-color: #66d1ff;
     color: #fff;
 }
 
@@ -939,7 +939,7 @@ mark {
     font-weight: 700;
 }
 .post-title:hover {
-    color: #4FD675;
+    color: #66d1ff;
 }
 
 .social-icons {
@@ -955,7 +955,7 @@ mark {
     padding: 5px;
 }
 .social-icons li a:hover {
-    color: #4FD675;
+    color: #66d1ff;
 }
 
 .post-slider {
@@ -996,7 +996,7 @@ mark {
     outline: 0;
 }
 .slick-arrow:hover {
-    background: #4FD675;
+    background: #66d1ff;
 }
 
 .prevArrow {
@@ -1017,13 +1017,13 @@ mark {
     text-align: center;
     padding: 0;
     margin-right: 10px;
-    border: 1px solid #4FD675;
-    color: #4FD675;
+    border: 1px solid #66d1ff;
+    color: #66d1ff;
 }
 .pagination .page-item .page-link:hover {
-    background: #4FD675;
+    background: #66d1ff;
     color: #fff;
-    border-color: #4FD675;
+    border-color: #66d1ff;
 }
 .pagination .page-item .page-link:focus {
     box-shadow: none;
@@ -1032,9 +1032,9 @@ mark {
     border-radius: 50%;
 }
 .pagination .page-item.active .page-link {
-    background: #4FD675;
+    background: #66d1ff;
     color: #fff;
-    border-color: #4FD675;
+    border-color: #66d1ff;
 }
 
 .author-block {
@@ -1084,7 +1084,7 @@ mark {
     color: #333;
 }
 .content a:hover {
-    color: #4FD675;
+    color: #66d1ff;
 }
 .content ol,
 .content ul {
@@ -1109,7 +1109,7 @@ mark {
     height: 8px;
     width: 8px;
     border-radius: 50%;
-    background: #4FD675;
+    background: #66d1ff;
     left: 3px;
     top: 8px;
 }
@@ -1209,7 +1209,7 @@ mark {
     font-size: 20px !important;
     color: #555;
     padding: 20px 40px;
-    border-left: 2px solid #4FD675;
+    border-left: 2px solid #66d1ff;
     margin: 40px 0;
     font-weight: bold;
     background: #fff;
@@ -1255,12 +1255,12 @@ mark {
     box-shadow: none !important;
 }
 .code-tabs .nav-tabs li a:focus {
-    border-color: #4FD675;
+    border-color: #66d1ff;
 }
 .code-tabs .nav-tabs li.active a {
     color: #fff;
-    background-color: #4FD675;
-    border-color: #4FD675;
+    background-color: #66d1ff;
+    border-color: #66d1ff;
 }
 .code-tabs .tab-content {
     padding: 20px 15px;
@@ -1282,7 +1282,6 @@ mark {
     margin-bottom: 7px;
 }
 .input-group .input {
-    border: 1px solid transparent;
     border-color: #EBEBEB;
 
     background-color: #F9F9F9;
@@ -1292,7 +1291,7 @@ mark {
 .input-group .input:focus {
     outline: 0;
     box-shadow: none;
-    border-color: #4FD675;
+    border-color: #66d1ff;
 }
 .input-group textarea.input {
     height: 120px;
@@ -1302,7 +1301,7 @@ mark {
     margin-bottom: 30px;
     padding: 15px;
     border-radius: 5px;
-    border-top: 6px solid #4FD675;
+    border-top: 6px solid #66d1ff;
     background-color: #fff;
 }
 .widget-title {
@@ -1326,7 +1325,7 @@ mark {
     transition: 0.2s ease;
 }
 .widget-search input:focus {
-    border-color: #4FD675;
+    border-color: #66d1ff;
     outline: 0;
 }
 .widget-search input::-moz-placeholder {
@@ -1354,7 +1353,7 @@ mark {
     display: block;
     margin: 0 auto 10px;
     border: 5px solid transparent;
-    box-shadow: 0 0 0 2px #4FD675;
+    box-shadow: 0 0 0 2px #66d1ff;
 }
 @media (max-width: 1200px) {
     .widget-about img {
@@ -1384,7 +1383,7 @@ mark {
 .widget-categories a::before {
     position: absolute;
     content: "#";
-    color: #4FD675;
+    color: #66d1ff;
     left: 0;
     top: 0;
 }
@@ -1398,21 +1397,21 @@ mark {
     color: #333;
 }
 .widget-list li a:hover {
-    color: #4FD675;
+    color: #66d1ff;
 }
 .widget- li {
     margin-bottom: 10px;
 }
 .widget- li a {
     padding: 2px 15px;
-    border: 1px solid #4FD675;
+    border: 1px solid #66d1ff;
     border-radius: 30px;
     display: block;
     color: #555;
 }
 .widget- li a:hover {
-    border-color: #4FD675;
-    background: #4FD675;
+    border-color: #66d1ff;
+    background: #66d1ff;
     color: #fff;
 }
 .widget-card {
@@ -1432,7 +1431,7 @@ mark {
     color: #777;
 }
 .widget-social a:hover {
-    color: #4FD675;
+    color: #66d1ff;
 }
 
 .quote {
@@ -1444,14 +1443,14 @@ mark {
 }
 .quote i {
     font-size: 24px;
-    color: #4FD675;
+    color: #66d1ff;
     margin-right: 10px;
 }
 .quote p {
     font-style: italic;
 }
 .quote-by {
-    color: #4FD675;
+    color: #66d1ff;
 }
 
 .instagram-post img {
@@ -1471,7 +1470,7 @@ mark {
     z-index: -1;
 }
 .error-shape-1 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .error-shape-2 {
     position: absolute;
@@ -1480,7 +1479,7 @@ mark {
     z-index: -1;
 }
 .error-shape-2 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 .error-shape-3 {
     position: absolute;
@@ -1489,7 +1488,7 @@ mark {
     z-index: -1;
 }
 .error-shape-3 .path {
-    fill: #4FD675;
+    fill: #66d1ff;
 }
 
 .footer {
@@ -1506,13 +1505,13 @@ mark {
     padding: 5px;
 }
 .footer-list a:hover {
-    color: #4FD675;
+    color: #66d1ff;
 }
 .footer-border {
     position: absolute;
     top: -75px;
     width: 100%;
-    stroke: #4FD675;
+    stroke: #66d1ff;
 }
 
 .image-wrapper {
@@ -1539,7 +1538,7 @@ mark {
     content: "";
     height: 100%;
     width: 100%;
-    border: 1px solid #4FD675;
+    border: 1px solid #66d1ff;
     left: 15px;
     top: 15px;
     border-radius: inherit;
@@ -1573,7 +1572,7 @@ mark {
     line-height: 55px;
     font-size: 20px;
     color: #fff;
-    background-color: #4FD675;
+    background-color: #66d1ff;
     text-align: center;
     box-shadow: 0 0 0 5px rgba(79, 214, 117, 0.7);
     transition: 0.2s ease-out;
@@ -1587,7 +1586,7 @@ mark {
     height: 150px;
     width: 150px;
     color: #fff;
-    background-color: #4FD675;
+    background-color: #66d1ff;
     line-height: 150px;
     border-radius: 50%;
     text-align: center;
@@ -1656,9 +1655,9 @@ mark {
     border: 2px solid transparent;
 }
 .nav-pills-icon .nav-link.active {
-    color: #4FD675;
+    color: #66d1ff;
     background-color: transparent;
-    border-color: #4FD675;
+    border-color: #66d1ff;
 }
 
 .book-cover {
@@ -1678,14 +1677,14 @@ mark {
 }
 .widget-list-inline li a {
     padding: 2px 15px;
-    border: 1px solid #4FD675;
+    border: 1px solid #66d1ff;
     border-radius: 30px;
     display: block;
     color: #555;
 }
 .widget-list-inline li a:hover {
-    border-color: #4FD675;
-    background: #4FD675;
+    border-color: #66d1ff;
+    background: #66d1ff;
     color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

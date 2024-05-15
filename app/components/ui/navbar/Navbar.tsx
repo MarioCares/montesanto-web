@@ -13,7 +13,7 @@ export default function Navbar() {
           <Link className="navbar-item" to={"/"}>
             <img
               className="img-fluid"
-              width="100px"
+              width="104"
               src="/images/logo.png"
               alt="Reader | Personal Bulma Blog Template"
             />
@@ -36,8 +36,14 @@ export default function Navbar() {
             <NavbarDropdown
               title="Publicaciones"
               links={[
-                { link: "author.html", text: "Autor" },
-                { link: "author2.html", text: "Autor 2" },
+                {
+                  link: "/publicaciones/categoria/Devocional",
+                  text: "Devocional",
+                },
+                {
+                  link: "/publicaciones/categoria/Palabra Dominical",
+                  text: "Palabra Dominical",
+                },
               ]}
             />
             <li className="navbar-item">
@@ -46,14 +52,14 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar-item">
-              <a className="navbar-link is-arrowless" href="contact.html">
+              <Link className="navbar-link is-arrowless" to={"/himnario"}>
                 Himnario
-              </a>
+              </Link>
             </li>
             <li className="navbar-item">
-              <a className="navbar-link is-arrowless" href="contact.html">
+              <Link className="navbar-link is-arrowless" to={"/descargas"}>
                 Descargas
-              </a>
+              </Link>
             </li>
             <li className="navbar-item">
               <a className="navbar-link is-arrowless" href="contact.html">

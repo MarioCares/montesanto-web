@@ -1,12 +1,17 @@
 import { IPost, IPostTag } from "~/interface/post.interface";
 import { Link } from "@remix-run/react";
-import { publisherNameToAvatarImage } from "~/utils/string";
+import {
+  cropLargeText,
+  longDateToShorDate,
+  publisherNameToAvatarImage,
+} from "~/utils/string";
 
 type RecentPostCardProps = {
   post: IPost;
+  isFeatured: boolean;
 };
 
-export default function RecentPostCard({ post }: RecentPostCardProps) {
+export function RecentPostCard({ post, isFeatured }: RecentPostCardProps) {
   return (
     <article className="card mb-5">
       <div className="post-slider">
@@ -19,7 +24,7 @@ export default function RecentPostCard({ post }: RecentPostCardProps) {
       <div className="card-body">
         <h3 className="mb-3">
           <Link className="post-title" to={`/publicacion/${post.slug}`}>
-            {post.title}
+            {isFeatured ? post.subtitle : post.title}
           </Link>
         </h3>
         <ul className="card-meta list-inline">
@@ -38,11 +43,12 @@ export default function RecentPostCard({ post }: RecentPostCardProps) {
             </Link>
           </li>
           <li className="list-inline-item">
-            <i className="ti-timer"></i>2 Min To Read
+            <i className="ti-timer"></i>
+            {post.lectureTime}&apos; lectura
           </li>
           <li className="list-inline-item">
             <i className="ti-calendar"></i>
-            {post.postAt}
+            {longDateToShorDate(post.postAt)}
           </li>
           <li className="list-inline-item">
             <ul className="card-meta-tag list-inline">
@@ -57,7 +63,13 @@ export default function RecentPostCard({ post }: RecentPostCardProps) {
           </li>
         </ul>
         <div className="content">
-          <div dangerouslySetInnerHTML={{ __html: post.introduction }} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: isFeatured
+                ? `${cropLargeText(post.introduction, 15)}...`
+                : post.introduction,
+            }}
+          />
         </div>
         <Link
           to={`/publicacion/${post.slug}`}
@@ -65,6 +77,41 @@ export default function RecentPostCard({ post }: RecentPostCardProps) {
         >
           Leer más
         </Link>
+      </div>
+    </article>
+  );
+}
+
+type FeaturedPostCardProps = {
+  post: IPost;
+};
+
+export function FeaturedPostCard({ post }: FeaturedPostCardProps) {
+  return (
+    <article className="card mb-5">
+      <div className="card-body is-flex">
+        <img
+          alt={""}
+          className="card-img-sm"
+          src={`https://unsplash.it/860/430.webp?random=${post.id}`}
+        />
+        <div className="ml-3">
+          <h4>
+            <Link to={post.slug} className="post-title">
+              {post.title}
+            </Link>
+          </h4>
+          <ul className="card-meta mt-2">
+            <li className="list-inline-item mb-0">
+              <i className="ti-calendar"></i>
+              {longDateToShorDate(post.postAt)}
+            </li>
+            <li className="list-inline-item mb-0">
+              <i className="ti-timer"></i>
+              {post.lectureTime}&apos; lectura
+            </li>
+          </ul>
+        </div>
       </div>
     </article>
   );
