@@ -3,7 +3,7 @@ import Sidebar from "~/components/Index/Sidebar";
 import { PostService } from "~/services/PostService";
 import { useLoaderData } from "@remix-run/react";
 import { IPost } from "~/interface/post.interface";
-import RecentPostCard from "~/components/ui/article/Card";
+import { RecentPostCard } from "~/components/ui/article/Card";
 import PostNotFound from "~/components/ui/PostNotFound";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
 
@@ -34,7 +34,7 @@ export default function PostByTagPage() {
               </h1>
               {posts.length ? (
                 posts.map((post: IPost) => (
-                  <RecentPostCard key={post.slug} post={post} />
+                  <RecentPostCard key={post.slug} post={post} isFeatured />
                 ))
               ) : (
                 <PostNotFound />
