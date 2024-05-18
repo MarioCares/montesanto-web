@@ -14,7 +14,7 @@ export default function Navbar() {
             <img
               className="img-fluid"
               width="104"
-              src="/images/logo.png"
+              src="/images/monte1.png"
               alt="Reader | Personal Bulma Blog Template"
             />
           </Link>
