@@ -2,9 +2,9 @@ import * as process from "process";
 
 const API_URL = process.env.API_URL ?? "localhost";
 
-const get = async (limit: number, offset: number) => {
+const get = async (limit: number, offset: number, category: string) => {
   const response = await fetch(
-    `http://${API_URL}:4000/publicacion?limit=${limit}&offset=${offset}`
+    `http://${API_URL}:4000/publicacion?limit=${limit}&offset=${offset}&category=${category}`
   );
   return await response.json();
 };
