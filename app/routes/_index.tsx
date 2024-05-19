@@ -20,11 +20,11 @@ export const meta: MetaFunction = () => {
 export const loader = async () => {
   const [posts, tags, categories, lastDominical, featuredPosts] =
     await Promise.all([
-      await PostService.get(10, 0, "Devocional"),
+      await PostService.get(10, 0, ""),
       await PostService.getTags(),
       await PostService.getCategories(),
       await PostService.getLastDominical(),
-      await PostService.get(3, 0, "Palabra Dominical"),
+      await PostService.get(3, 0, "Devocional"),
     ]);
   return json({ posts, tags, categories, lastDominical, featuredPosts });
 };
