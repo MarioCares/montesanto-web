@@ -62,14 +62,14 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="navbar-item">
-              <a className="navbar-link is-arrowless" href="contact.html">
+              <Link className="navbar-link is-arrowless" to={"/"}>
                 Los Escogidos
-              </a>
+              </Link>
             </li>
             <li className="navbar-item">
-              <a className="navbar-link is-arrowless" href="contact.html">
+              <Link className="navbar-link is-arrowless" to={"/contacto"}>
                 Contacto
-              </a>
+              </Link>
             </li>
           </div>
 

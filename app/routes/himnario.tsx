@@ -1,4 +1,15 @@
 import PageHeader from "~/components/ui/PageHeader";
+import { MetaFunction } from "@remix-run/react";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: `Himnos, Coros y Alabanzas - MonteSanto.cl` },
+    {
+      name: "description",
+      content: "Bienvenido a nuestra web",
+    },
+  ];
+};
 
 export default function HimnarioPage() {
   return (

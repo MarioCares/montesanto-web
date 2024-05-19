@@ -1,11 +1,21 @@
 import PageHeader from "~/components/ui/PageHeader";
 import TextAndImage from "~/components/ui/sections/TextAndImage";
-import { Link } from "@remix-run/react";
+import { Link, MetaFunction } from "@remix-run/react";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: `La historia de Monte Santo - MonteSanto.cl` },
+    {
+      name: "description",
+      content: "Bienvenido a nuestra web",
+    },
+  ];
+};
 
 export default function AboutUsPage() {
   return (
     <>
-      <PageHeader title={"Quiénes Somos"} page={"Quiénes Somos"} />
+      <PageHeader title={"Quiénes Somos"} page={"La historia de Monte Santo"} />
 
       <TextAndImage
         imageAlign="right"

@@ -2,6 +2,17 @@ import PageHeader from "~/components/ui/PageHeader";
 import { useState } from "react";
 import Modal from "~/components/ui/Modal";
 import { PdfViewer } from "~/components/ui/PdfViewer";
+import { MetaFunction } from "@remix-run/react";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: `Descarga de Contenido - MonteSanto.cl` },
+    {
+      name: "description",
+      content: "Bienvenido a nuestra web",
+    },
+  ];
+};
 
 export default function DownloadsPage() {
   const [modalVidaVictoriaIsOpen, setModalVidaVictoriaIsOpen] =
