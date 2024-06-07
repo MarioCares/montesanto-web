@@ -1,6 +1,6 @@
 import process from "process";
 import { IMessage } from "~/interface/message.interface";
-import { getErrorMessage } from "~/utils/Errors";
+import { getErrorMessage } from "~/utils/errors";
 
 const API_URL = process.env.API_URL ?? "localhost";
 

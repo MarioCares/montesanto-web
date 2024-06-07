@@ -18,3 +18,7 @@ export function longDateToShorDate(date: string) {
     day: "numeric",
   });
 }
+
+export function rn2br(text: string) {
+  return text.replace(/\r\n/g, "<br />");
+}

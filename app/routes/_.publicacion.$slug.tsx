@@ -4,6 +4,8 @@ import { IPost, IPostTag } from "~/interface/post.interface";
 import TextAndImage from "~/components/ui/sections/TextAndImage";
 import { longDateToShorDate, publisherNameToAvatarImage } from "~/utils/string";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
+import { BaseComment, LeaveComment } from "~/components/ui/article/Comment";
+import useMonteUser from "~/hooks/useMonteUser";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const [post] = await Promise.all([await PostService.getBySlug(params.slug)]);
@@ -22,13 +24,17 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function PostPage() {
   const { post } = useLoaderData<typeof loader>() as { post: IPost };
+  const user = useMonteUser();
+
+  console.log({ user });
+
   return (
     <>
       <div className="py-4"></div>
       <section className="section">
         <div className="container">
           <div className="columns is-multiline is-desktop is-justify-content-center">
-            <div className="column is-9-desktop mb-5">
+            <div className="column is-9-desktop">
               <article>
                 <h1 className="h2">{post.title}</h1>
                 <ul className="card-meta my-3 list-inline">
@@ -121,106 +127,51 @@ export default function PostPage() {
               </article>
             </div>
 
-            {/* <div className="column is-9-desktop mt-4">
-              <div className="mb-5 border-top mt-4 pt-5">
-                <h3 className="mb-5">Comments</h3>
-
-                <div className="block mb-4 pb-4">
-                  <a className="is-block mb-5" href="#">
-                    <img
-                      src="images/post/user-01.jpg"
-                      className="mr-3 rounded-circle"
-                      alt=""
-                    />
-                  </a>
-
-                  <a href="#!" className="h4 d-inline-block mb-3">
-                    Alexender Grahambel
-                  </a>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                    scelerisque ante sollicitudin. Cras purus odio, vestibulum
-                    in vulputate at, tempus viverra turpis. Fusce condimentum
-                    nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <span className="text-black-800 mr-3 font-weight-600">
-                    April 18, 2020 at 6.25 pm
-                  </span>
-                  <a className="text-primary font-weight-600" href="#!">
-                    Reply
-                  </a>
-                </div>
-
-                <div className="block">
-                  <a className="is-block mb-5" href="#!">
-                    <img
-                      src="images/post/user-02.jpg"
-                      className="mr-3 rounded-circle"
-                      alt=""
-                    />
-                  </a>
-
-                  <a href="#!" className="h4 d-inline-block mb-3">
-                    Nadia Sultana Tisa
-                  </a>
-                  <p>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                    scelerisque ante sollicitudin. Cras purus odio, vestibulum
-                    in vulputate at, tempus viverra turpis. Fusce condimentum
-                    nunc ac nisi vulputate fringilla. Donec lacinia congue felis
-                    in faucibus.
-                  </p>
-                  <span className="text-black-800 mr-3 font-weight-600">
-                    April 18, 2020 at 6.25 pm
-                  </span>
-                  <a className="text-primary font-weight-600" href="#!">
-                    Reply
-                  </a>
-                </div>
+            <div className="column is-9-desktop">
+              <div className="mb-5 border-top pt-5">
+                <h3 className="mb-5">Comentarios</h3>
+                <BaseComment
+                  comment={{
+                    postedAt: "now",
+                    text: "text",
+                    likes: 1,
+                    dislikes: 2,
+                    userName: "Mario",
+                    email: "mario@",
+                    id: 1,
+                  }}
+                />
+                <BaseComment
+                  comment={{
+                    postedAt: "now",
+                    text: "text",
+                    likes: 1,
+                    dislikes: 2,
+                    userName: "Mario",
+                    email: "mario@",
+                    id: 1,
+                  }}
+                />
               </div>
 
               <div className="pt-5">
-                <h3 className="mb-5">Leave a Reply</h3>
-                <form method="POST">
-                  <div className="columns is-multiline">
-                    <div className="input-group py-0 column is-12">
-                      <textarea
-                        className="input"
-                        name="comment"
-                        required
-                      ></textarea>
-                    </div>
-                    <div className="input-group py-0 column is-4-desktop">
-                      <input
-                        className="input"
-                        type="text"
-                        placeholder="Name"
-                        required
-                      />
-                    </div>
-                    <div className="input-group py-0 column is-4-desktop">
-                      <input
-                        className="input"
-                        type="email"
-                        placeholder="Email"
-                        required
-                      />
-                    </div>
-                    <div className="input-group py-0 column is-4-desktop">
-                      <input
-                        className="input"
-                        type="url"
-                        placeholder="Website"
-                      />
-                    </div>
-                  </div>
-                  <button className="btn btn-primary" type="submit">
-                    Comment Now
-                  </button>
-                </form>
+                {user ? (
+                  <>
+                    <h3 className="mb-5">Deja un comentario</h3>
+                    <LeaveComment />
+                  </>
+                ) : (
+                  <>
+                    <h1 className="title is-3">
+                      ¿Quieres dejar un comentario?
+                    </h1>
+                    <a href={"/login"} className="button is-link">
+                      Ingresar
+                    </a>
+                  </>
+                )}
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>

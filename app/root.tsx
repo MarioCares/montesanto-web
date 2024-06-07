@@ -6,7 +6,6 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { LinksFunction } from "@remix-run/node";
-import Navbar from "~/components/ui/navbar/Navbar";
 
 export const links: LinksFunction = () => {
   return [
@@ -35,7 +34,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <Navbar />
         {children}
         <ScrollRestoration />
         <Scripts />

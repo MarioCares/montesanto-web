@@ -1,10 +1,7 @@
 import { Border, Shape1, Shape2, Shape3 } from "~/components/ui/svg/shapes";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 
 export default function Banner() {
-  const { tags } = useLoaderData() as {
-    tags: string[];
-  };
   const currentYear = new Date().getFullYear();
   return (
     <div className="banner has-text-centered">
@@ -35,13 +32,13 @@ export default function Banner() {
               </p>
               <strong>Que Dios te guíe en sus caminos.</strong>
             </div>
-            <ul className="widget-list-inline mb-4">
-              {tags.map((tag: string) => (
-                <li key={`banner-tag-${tag}`} className="list-inline-item">
-                  <Link to={`/publicaciones/tag/${tag}`}>{tag}</Link>
-                </li>
-              ))}
-            </ul>
+            {/*<ul className="widget-list-inline mb-4">*/}
+            {/*  {tags.map((tag: string) => (*/}
+            {/*    <li key={`banner-tag-${tag}`} className="list-inline-item">*/}
+            {/*      <Link to={`/publicaciones/tag/${tag}`}>{tag}</Link>*/}
+            {/*    </li>*/}
+            {/*  ))}*/}
+            {/*</ul>*/}
           </div>
         </div>
       </div>

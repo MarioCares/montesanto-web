@@ -1,6 +1,6 @@
 import { useLoaderData } from "@remix-run/react";
 import { IPost } from "~/interface/post.interface";
-import { loader } from "~/routes/_index";
+import { loader } from "~/routes/_._index";
 import { FeaturedPostCard, RecentPostCard } from "~/components/ui/article/Card";
 
 export default function FeaturedPost() {
